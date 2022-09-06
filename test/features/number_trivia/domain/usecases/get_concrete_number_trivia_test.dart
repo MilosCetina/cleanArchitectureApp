@@ -26,16 +26,16 @@ void main() {
   final tNumber = 1;
   final tNumberTrivia = NumberTrivia(number: 1, text: 'test');
 
-  test(
-    "should get trivia for the number from the repository",
-    () async {
-      when(mockNumberTriviaRepository.getConcreteNumberTrivia(tNumber))
-          .thenAnswer((_) async => Right(tNumberTrivia));
-      final result = await usecase(Params(number: tNumber));
-      print(result);
-      expect(result, Right(tNumberTrivia));
-      verify(mockNumberTriviaRepository.getConcreteNumberTrivia(tNumber));
-      verifyNoMoreInteractions(mockNumberTriviaRepository);
-    },
-  );
+  // test(
+  //   "should get trivia for the number from the repository",
+  //   () async {
+  //     when(mockNumberTriviaRepository.getConcreteNumberTrivia(tNumber))
+  //         .thenAnswer((_) async => Right(tNumberTrivia));
+  //     final result = await usecase(Params(number: tNumber));
+  //     print(result);
+  //     expect(result, Right(tNumberTrivia));
+  //     verify(mockNumberTriviaRepository.getConcreteNumberTrivia(tNumber));
+  //     verifyNoMoreInteractions(mockNumberTriviaRepository);
+  //   },
+  // );
 }
